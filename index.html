@@ -141,7 +141,7 @@
                         <div class="flex gap-6">
                             <div>
                                 <div class="w-20 h-20 relative rounded-2xl">
-                                    <img class="w-full" src="img/profile1.png">
+                                    <img class="w-full rounded-2xl" src="img/profile1.png">
                                     <div class="w-5 h-5 absolute -top-1 -right-1">
                                         <img class="w-full" src="img/Status.png">
                                     </div>
@@ -171,10 +171,10 @@
                                         </div>
                                         <div class="flex items-center mr-6">
                                             <img class="w-7 mr-2" src="img/clock.png">
-                                            <p class="font-inter">5 min</p>
+                                            <p class="font-inter"><span>5</span> min</p>
                                         </div>
                                     </div>
-                                    <img class="w-7" src="img/message2.png">
+                                    <img onclick="" id="seenbtn" class="w-7 seenitem" src="img/message2.png">
                                 </div>
                             </div>
                         </div>
@@ -242,22 +242,45 @@
 
         <div class="grid grid-cols-3 gap-6" id="newpost">
 
+            <!-- Latest Post Start -->
             <div class="p-6 border border-[#12132D26] rounded-3xl">
                 <div class="h-48 bg-[#12132D0d] rounded-[20px] mb-6">
                     <img class="h-full block mx-auto" src="img/postcover.png">
                 </div>
-
                 <div class="flex items-center mb-4">
                     <img class="w-6 mr-2" src="img/calander.png" alt="">
                     <p>29 January 2024</p>
                 </div>
-
                 <div>
                     <p class="font-extrabold text-[18px] mb-4">What will a mars habitat force that impact in our daily
                         life!!!</p>
                     <p class="mb-4">Yes, you can run unit tests and view the results directly within the app. </p>
                 </div>
+                <div class="flex items-center">
+                    <div class="w-11 h-11 rounded-full mr-4">
+                        <img class="w-full rounded-full" src="img/profile2.png">
+                    </div>
+                    <div>
+                        <p class="font-bold mb-1">Cameron Williamson</p>
+                        <p class="text-[14px]">Unknown</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Latest Post End -->
 
+            <div class="p-6 border border-[#12132D26] rounded-3xl">
+                <div class="h-48 bg-[#12132D0d] rounded-[20px] mb-6">
+                    <img class="h-full block mx-auto" src="img/postcover.png">
+                </div>
+                <div class="flex items-center mb-4">
+                    <img class="w-6 mr-2" src="img/calander.png" alt="">
+                    <p>29 January 2024</p>
+                </div>
+                <div>
+                    <p class="font-extrabold text-[18px] mb-4">What will a mars habitat force that impact in our daily
+                        life!!!</p>
+                    <p class="mb-4">Yes, you can run unit tests and view the results directly within the app. </p>
+                </div>
                 <div class="flex items-center">
                     <div class="w-11 h-11 rounded-full mr-4">
                         <img class="w-full" src="img/profile2.png">
@@ -269,50 +292,19 @@
                 </div>
             </div>
 
-
             <div class="p-6 border border-[#12132D26] rounded-3xl">
                 <div class="h-48 bg-[#12132D0d] rounded-[20px] mb-6">
                     <img class="h-full block mx-auto" src="img/postcover.png">
                 </div>
-
                 <div class="flex items-center mb-4">
                     <img class="w-6 mr-2" src="img/calander.png" alt="">
                     <p>29 January 2024</p>
                 </div>
-
                 <div>
                     <p class="font-extrabold text-[18px] mb-4">What will a mars habitat force that impact in our daily
                         life!!!</p>
                     <p class="mb-4">Yes, you can run unit tests and view the results directly within the app. </p>
                 </div>
-
-                <div class="flex items-center">
-                    <div class="w-11 h-11 rounded-full mr-4">
-                        <img class="w-full" src="img/profile2.png">
-                    </div>
-                    <div>
-                        <p class="font-bold mb-1">Cameron Williamson</p>
-                        <p class="text-[14px]">Unknown</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-6 border border-[#12132D26] rounded-3xl">
-                <div class="h-48 bg-[#12132D0d] rounded-[20px] mb-6">
-                    <img class="h-full block mx-auto" src="img/postcover.png">
-                </div>
-
-                <div class="flex items-center mb-4">
-                    <img class="w-6 mr-2" src="img/calander.png" alt="">
-                    <p>29 January 2024</p>
-                </div>
-
-                <div>
-                    <p class="font-extrabold text-[18px] mb-4">What will a mars habitat force that impact in our daily
-                        life!!!</p>
-                    <p class="mb-4">Yes, you can run unit tests and view the results directly within the app. </p>
-                </div>
-
                 <div class="flex items-center">
                     <div class="w-11 h-11 rounded-full mr-4">
                         <img class="w-full" src="img/profile2.png">
@@ -327,15 +319,6 @@
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -359,6 +342,7 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
