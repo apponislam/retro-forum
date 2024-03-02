@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <title>Assignment 06</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Mulish", sans-serif;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        clr1: '#12132D',
+                        clr2: '#797DFC',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="container mx-auto">
+        <div class="navbar py-[50px]">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>a</a></li>
+                        <li><a>a</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-4xl font-black text-clr1 focus:none">AppOn</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <div class="tooltip" data-tip="Home">
+                        <li><a class="px-[6px]"><img src="img/navbtn1.png"></a></li>
+                    </div>
+                    <div class="tooltip" data-tip="Edit">
+                        <li><a class="px-[6px]"><img src="img/navbtn2.png"></a></li>
+                    </div>
+                    <div class="tooltip" data-tip="Add">
+                        <li><a class="px-[6px]"><img src="img/navbtn3.png"></a></li>
+                    </div>
+                    <div class="tooltip" data-tip="Flag">
+                        <li><a class="px-[6px]"><img src="img/navbtn4.png"></a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="navbar-end w-auto pl-3">
+                <a class="btn bg-clr2 text-white rounded-[50px] px-10 py-4 h-auto font-bold text-xl">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HeroArea -->
+
+    <div class="container mx-auto">
+        <div class="p-24 bg-[url('img/bg1.png')] rounded-[32px] bg-no-repeat bg-cover mb-24">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-6xl font-black text-white mb-6">Welcome to the <br> <span
+                            class="text-[#797DFC]">AppOn</span> Forum
+                    </h1>
+                    <p class="font-medium text-xl mb-6 text-white">Share your favorite opinion and win and wp forum
+                        coffee mug!</p>
+                    <label class="input input-bordered flex items-center gap-4 rounded-[32px] py-8">
+                        <input type="text" class="grow" placeholder="Search here anything" />
+                        <button class="badge badge-info bg-clr2 text-white p-6">Search</button>
+                    </label>
+                </div>
+                <div class="w-96 rounded-[32px] bg-white p-12">
+                    <div class="flex items-center justify-between mb-6 text-clr1 text-2xl font-medium">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex items-center justify-between mb-6 text-clr1 text-2xl font-medium">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex items-center justify-between mb-6 text-clr1 text-2xl font-medium">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex items-center justify-between text-clr1 text-2xl font-medium">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dicussion -->
+
+    <div class="container mx-auto">
+        <div>
+            <h1 class="font-black text-[40px] text-center text-clr1 mb-6">Let’s Discuss</h1>
+            <p class="font-inter text-center text-[18px] mb-12">Yes, you can run unit tests and view the results
+                directly
+                within the app. The <br> integrated testing features
+                allow for a streamlined .</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="bg-[#f4f4f5] py-24">
+        <div class="container mx-auto">
+            <div>
+                <h1 class="font-black text-[40px] text-center text-clr1 mb-6">AppOn</h1>
+                <p class="font-inter text-center text-[18px] mb-8">Contrary to popular belief, Lorem Ipsum is not
+                    simply random text. It has roots in a <br> piece of classical Latin literature from 45 BC</p>
+            </div>
+            <div class="mb-12 pb-12 border-b border-[#30325E1A]"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
