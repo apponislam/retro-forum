@@ -14,24 +14,45 @@ const commentsFetch2 = async (id) => {
 
 const allcomments = comments => {
     console.log(comments);
+    loadingSpinner(true);
 
     const commentContainer = document.getElementById('comments');
     commentContainer.textContent = '';
 
-    comments.forEach(comment => {
-        console.log(comment);
+    setTimeout(() => {
+        comments.forEach(comment => {
+            console.log(comment);
 
-        const online = comment.isActive;
-        const onlineStatus = online ? 'img/Status.png' : 'img/Statusred.png';
+            const online = comment.isActive;
+            const onlineStatus = online ? 'img/Status.png' : 'img/Statusred.png';
 
-        const commentDiv = document.createElement('div');
-        commentDiv.innerHTML = `
-        <div class="lg:p-10 p-5 lg:mx-0 mx-3 bg-[#12132D0d] rounded-3xl border border-[#12132D0d] hover:border-[#797DFC] hover:bg-[#797DFC1a] delay-200 "> <div class="flex lg:gap-6 gap-3 lg:flex-row flex-col"> <div> <div class="w-20 h-20 relative rounded-2xl"> <img class="w-full rounded-2xl" src="${comment.image}"> <div class="w-5 h-5 absolute -top-1 -right-1"> <img class="w-full" src="${onlineStatus}"> </div> </div> </div> <div class="flex-1"> <div class="flex mb-3"> <p class="font-medium text-[14px] mr-8">#<span>${comment.category}</span></p> <p class="font-medium text-[14px]">Author : <span>${comment.author.name}</span></p> </div> <div class="mb-6 border-b border-dotted border-[#12132D]"> <h1 class="font-bold text-xl mb-4">${comment.title}</h1> <p class="font-inter mb-5">${comment.description}</p> </div> <div class="flex items-center justify-between"> <div class="flex items-center"> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/message.png"> <p class="font-inter">${comment.comment_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/eyebtn.png"> <p class="font-inter">${comment.view_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/clock.png"> <p class="font-inter"><span>${comment.posted_time}</span> min</p> </div> </div> <img onclick="msgRead('${comment.title}','${comment.view_count}')" id="seenbtn" class="w-7 seenitem" src="img/message2.png"> </div> </div> </div> </div>
-        `
+            const commentDiv = document.createElement('div');
+            commentDiv.innerHTML = `
+            <div class="lg:p-10 p-5 lg:mx-0 mx-3 bg-[#12132D0d] rounded-3xl border border-[#12132D0d] hover:border-[#797DFC] hover:bg-[#797DFC1a] delay-200 "> <div class="flex lg:gap-6 gap-3 lg:flex-row flex-col"> <div> <div class="w-20 h-20 relative rounded-2xl"> <img class="w-full rounded-2xl" src="${comment.image}"> <div class="w-5 h-5 absolute -top-1 -right-1"> <img class="w-full" src="${onlineStatus}"> </div> </div> </div> <div class="flex-1"> <div class="flex mb-3"> <p class="font-medium text-[14px] mr-8">#<span>${comment.category}</span></p> <p class="font-medium text-[14px]">Author : <span>${comment.author.name}</span></p> </div> <div class="mb-6 border-b border-dotted border-[#12132D]"> <h1 class="font-bold text-xl mb-4">${comment.title}</h1> <p class="font-inter mb-5">${comment.description}</p> </div> <div class="flex items-center justify-between"> <div class="flex items-center"> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/message.png"> <p class="font-inter">${comment.comment_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/eyebtn.png"> <p class="font-inter">${comment.view_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/clock.png"> <p class="font-inter"><span>${comment.posted_time}</span> min</p> </div> </div> <img onclick="msgRead('${comment.title}','${comment.view_count}')" id="seenbtn" class="w-7 seenitem" src="img/message2.png"> </div> </div> </div> </div>
+            `
 
-        commentContainer.appendChild(commentDiv);
+            commentContainer.appendChild(commentDiv);
+        });
 
-    })
+        loadingSpinner(false);
+    }, 2000);
+
+    // comments.forEach(comment => {
+    //     console.log(comment);
+
+    //     const online = comment.isActive;
+    //     const onlineStatus = online ? 'img/Status.png' : 'img/Statusred.png';
+
+    //     const commentDiv = document.createElement('div');
+    //     commentDiv.innerHTML = `
+    //     <div class="lg:p-10 p-5 lg:mx-0 mx-3 bg-[#12132D0d] rounded-3xl border border-[#12132D0d] hover:border-[#797DFC] hover:bg-[#797DFC1a] delay-200 "> <div class="flex lg:gap-6 gap-3 lg:flex-row flex-col"> <div> <div class="w-20 h-20 relative rounded-2xl"> <img class="w-full rounded-2xl" src="${comment.image}"> <div class="w-5 h-5 absolute -top-1 -right-1"> <img class="w-full" src="${onlineStatus}"> </div> </div> </div> <div class="flex-1"> <div class="flex mb-3"> <p class="font-medium text-[14px] mr-8">#<span>${comment.category}</span></p> <p class="font-medium text-[14px]">Author : <span>${comment.author.name}</span></p> </div> <div class="mb-6 border-b border-dotted border-[#12132D]"> <h1 class="font-bold text-xl mb-4">${comment.title}</h1> <p class="font-inter mb-5">${comment.description}</p> </div> <div class="flex items-center justify-between"> <div class="flex items-center"> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/message.png"> <p class="font-inter">${comment.comment_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/eyebtn.png"> <p class="font-inter">${comment.view_count}</p> </div> <div class="flex items-center lg:mr-6 mr-3"> <img class="w-7 mr-2" src="img/clock.png"> <p class="font-inter"><span>${comment.posted_time}</span> min</p> </div> </div> <img onclick="msgRead('${comment.title}','${comment.view_count}')" id="seenbtn" class="w-7 seenitem" src="img/message2.png"> </div> </div> </div> </div>
+    //     `
+
+    //     commentContainer.appendChild(commentDiv);
+    // });
+
+    // loadingSpinner(false);
+    
 };
 
 
@@ -55,12 +76,21 @@ function msgRead(title, counter){
 
 
 const searchBtn = () => {
+    loadingSpinner(true);
     const searchField = document.getElementById('search-card');
     const searchText = searchField.value;
     console.log(searchText);
     commentsFetch2(searchText);
 }
 
+const loadingSpinner = (isLoading) => {
+    const lodingDiv = document.getElementById('loading-spinner');
+    if(isLoading){
+        lodingDiv.classList.remove('hidden');
+    }else{
+        lodingDiv.classList.add('hidden');
+    }
+}
 
 
 
