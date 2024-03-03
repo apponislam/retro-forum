@@ -5,10 +5,18 @@ const commentsFetch = async () => {
     allcomments(comments);
 }
 
+const commentsFetch2 = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${id}`);
+    const data = await res.json();
+    const comments = data.posts;
+    allcomments(comments);
+}
+
 const allcomments = comments => {
     console.log(comments);
 
     const commentContainer = document.getElementById('comments');
+    commentContainer.textContent = '';
 
     comments.forEach(comment => {
         console.log(comment);
@@ -23,15 +31,9 @@ const allcomments = comments => {
 
         commentContainer.appendChild(commentDiv);
 
-
-
     })
 };
 
-
-        // const title = comment.title;
-        // const viewCount = comment.view_count;
-        // msgRead(title, viewCount);
 
 function msgRead(title, counter){
 
@@ -52,11 +54,27 @@ function msgRead(title, counter){
 }
 
 
+const searchBtn = () => {
+    const searchField = document.getElementById('search-card');
+    const searchText = searchField.value;
+    console.log(searchText);
+    commentsFetch2(searchText);
+}
 
 
-const seeBtn = id => {
-    console.log('id is', id);
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const letestCommentsFetch = async () => {
